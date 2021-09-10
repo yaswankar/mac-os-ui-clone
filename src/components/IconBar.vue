@@ -1,21 +1,29 @@
 <template>
-  <div class="icons-bar">
-      <img class="icons" :src="require('@/assets/IconBar/Finder.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Chrome.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/AppStore.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Messages.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Maps.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Contacts.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Mail.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Podcasts.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/SystemPreferences.png')" alt="">
-      <img class="icons" :src="require('@/assets/IconBar/Bin.png')" alt="">
-  </div>
+    <div class="icons-bar">
+        <img class="icons" :src="require('@/assets/IconBar/Finder.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Chrome.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/AppStore.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Messages.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Maps.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Contacts.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Mail.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Podcasts.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/SystemPreferences.png')" @click="openProgram">
+        <img class="icons" :src="require('@/assets/IconBar/Bin.png')" @click="openProgram">
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'IconBar'
+    name: 'IconBar',
+    methods: {
+        openProgram(e) {
+            e.target.classList.add('icon-bounce');
+            setTimeout(() => {
+                e.target.classList.remove('icon-bounce');
+            }, 3000);
+        }
+    }
 }
 </script>
 
@@ -38,6 +46,30 @@ export default {
     .icons {
         height: 60px;
         margin-left: 8px;
+    }
+    .icon-bounce {
+        animation: bounce 0.5s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+        animation-iteration-count: infinite;
+    }
+    @keyframes bounce {
+        from {
+            transform: translate3d(0, -15px, 0);
+        }
+        to {
+            transform: translate3d(0, 10px, 0);
+        }
+    }
+    @-webkit-keyframes bounce {
+        from {
+            -webkit-transform: translate3d(0, -15px, 0);
+            transform: translate3d(0, -10px, 0);
+        }
+        to {
+            -webkit-transform: translate3d(0, 15px, 0);
+            transform: translate3d(0, 10px, 0);
+        }
     }
 
 
