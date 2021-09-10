@@ -26,7 +26,7 @@ export default {
     display: flex;
     width: 690px;
     height: 72px;
-    left: calc(50% - 690px/2 + 17px);
+    left: calc(50% - 690px/2);
     bottom: 10px;
     box-shadow: 0px 4px 4px 0px #00000040;
     background: rgba(245, 245, 245, 0.15);
