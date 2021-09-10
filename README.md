@@ -1,5 +1,10 @@
 # mac-os-clone
 
+## Demo Link: 
+
+https://yaswankar.github.io/mac-os-ui-clone/
+
+
 ## Project setup
 ```
 npm install
