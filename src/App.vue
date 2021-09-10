@@ -1,19 +1,22 @@
 <template>
   <div id="app">
     <tool-bar @trigger-popover="openPopover"/>
+    <icon-bar />
     <component v-show="togglePopover" :is="popoverType" @close-popover="closePopover" />
   </div>
 </template>
 
 <script>
-import ApplePopover from './components/ApplePopover.vue';
+import ApplePopover from './components/ApplePopover';
+import IconBar from './components/IconBar';
 import ToolBar from './components/ToolBar';
 
 export default {
   name: 'App',
   components: {
     ToolBar,
-    ApplePopover
+    ApplePopover,
+    IconBar
   },
   data() {
     return {
